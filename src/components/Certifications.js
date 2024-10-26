@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal';
-import {cert} from "../components/Contents.js";
+import { cert } from "../components/Contents.js";
 
 const CertificationsWrapper = styled.section`
   padding: 20px;
+  width: 100%;
   text-align: center;
+  background-color: grey;
 `;
 
 const CertificationItem = styled.div`
@@ -14,14 +16,37 @@ const CertificationItem = styled.div`
   cursor: pointer;
 
   img {
-    width: 150px;
+    width: 18em;
     height: auto;
+    object-fit: cover;
     border-radius: 5px;
     transition: transform 0.3s ease;
   }
 
   img:hover {
     transform: scale(1.05);
+  }
+
+  /* Ajustes responsivos */
+  @media (max-width: 1024px) { /* Tablets */
+    img {
+      width: 15em;
+      height: 150px;
+    }
+  }
+
+  @media (max-width: 768px) { /* Móviles en orientación vertical */
+    img {
+      width: 10em;
+      height: 100px;
+    }
+  }
+
+  @media (max-width: 480px) { /* Móviles pequeños */
+    img {
+      width: 5em;
+      height: 80px;
+    }
   }
 `;
 
@@ -54,10 +79,10 @@ const Certifications = () => {
   };
 
   return (
-    <CertificationsWrapper>
+    <CertificationsWrapper id="certifications">
       <h2>Certifications</h2>
       <div>
-        {cert.map((cert, index) => (
+        {cert && Array.isArray(cert) && cert.map((cert, index) => (
           <CertificationItem key={index} onClick={() => openModal(cert)}>
             <img src={cert.preview} alt={cert.name} />
             <p>{cert.name}</p>
@@ -73,7 +98,7 @@ const Certifications = () => {
           style={modalStyles}
           ariaHideApp={false}  // Añade esto si tienes problemas con el modal en desarrollo
         >
-          <button onClick={closeModal}>Close</button>
+          <button onClick={closeModal}>Cerrar</button>
           <img src={selectedCert.url} alt={selectedCert.name} style={{ width: '100%' }} />
         </Modal>
       )}
