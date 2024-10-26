@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Modal from 'react-modal';
+import {cert} from "../components/Contents.js";
 
 const CertificationsWrapper = styled.section`
   padding: 20px;
@@ -39,10 +40,6 @@ const modalStyles = {
 };
 
 const Certifications = () => {
-  const [certifications] = useState([
-    { name: 'Certificación en React', url: 'url_del_certificado_1', preview: 'url_preview_certificado_1' },
-    { name: 'Certificación en JavaScript', url: 'url_del_certificado_2', preview: 'url_preview_certificado_2' },
-  ]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCert, setSelectedCert] = useState(null);
 
@@ -58,9 +55,9 @@ const Certifications = () => {
 
   return (
     <CertificationsWrapper>
-      <h2>Certificaciones</h2>
+      <h2>Certifications</h2>
       <div>
-        {certifications.map((cert, index) => (
+        {cert.map((cert, index) => (
           <CertificationItem key={index} onClick={() => openModal(cert)}>
             <img src={cert.preview} alt={cert.name} />
             <p>{cert.name}</p>
@@ -76,7 +73,7 @@ const Certifications = () => {
           style={modalStyles}
           ariaHideApp={false}  // Añade esto si tienes problemas con el modal en desarrollo
         >
-          <button onClick={closeModal}>Cerrar</button>
+          <button onClick={closeModal}>Close</button>
           <img src={selectedCert.url} alt={selectedCert.name} style={{ width: '100%' }} />
         </Modal>
       )}

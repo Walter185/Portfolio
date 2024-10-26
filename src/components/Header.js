@@ -10,7 +10,7 @@ const HeaderWrapper = styled.header`
 const Header = () => (
   <HeaderWrapper>
     <h1>Walter Liendo</h1>
-    <p>Desarrollador Web Full Stack</p>
+    <p>Full stack Developer</p>
   </HeaderWrapper>
 );
 
