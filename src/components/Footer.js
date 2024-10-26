@@ -2,12 +2,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FiMapPin } from 'react-icons/fi';
+import { BsWhatsapp, BsEnvelopeAt } from 'react-icons/bs';
+import Foto  from "../assets/img/walter.jpg";
 
 const FooterWrapper = styled.footer`
   background-color: #333;
   color: white;
   padding: 20px;
   text-align: center;
+`;
+const Section = styled.section`
+  margin-top: 50px;
 `;
 
 const FooterContent = styled.div`
@@ -27,6 +33,7 @@ const FooterContent = styled.div`
 const ContactLinks = styled.div`
   display: flex;
   gap: 15px;
+  justify-content: center;
 `;
 
 const ContactLink = styled.a`
@@ -38,49 +45,34 @@ const ContactLink = styled.a`
     color: #007bff;
   }
 `;
-
-const MessageForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 400px;
-  width: 100%;
+const H2 = styled.h2`
+    margin-top: 10px;
+`; 
+const Img = styled.img`
+    width: 100px;
+    border-radius: 50px;
 `;
 
-const Input = styled.input`
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-`;
-
-const Textarea = styled.textarea`
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  resize: vertical;
-`;
-
-const SubmitButton = styled.button`
-  padding: 10px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
 
 const Footer = () => {
   return (
-    <FooterWrapper>
+    <FooterWrapper id='contact'>
       <FooterContent>
+      <Section >
+            <Img src={Foto} alt="Walter Liendo"/>
+            <p style={{textAlign:"center"}}><b>Walter Liendo</b><br/>
+            Fullstack Dev<br/>
+            JavaScript/Python/React</p>
+        </Section>
+        <section style={{textAlign:"center"}}>
+                <H2>CONTACT</H2>
+                <p style={{textAlign:"center"}}><FiMapPin />  Guardia Vieja 3440 Piso 1° Apt "B" - CABA </p>
+                <p style={{textAlign:"center"}}><BsWhatsapp />  (+54)91158465481</p>
+                <p style={{textAlign:"center"}}><BsEnvelopeAt /> walter.liendo@gmail.com</p>
+            </section>
+            <section>
+                <H2 style={{textAlign:"center"}}>SOCIAL MEDIA</H2>
+             
         <ContactLinks>
           <ContactLink href="https://www.linkedin.com/in/walter-liendo-7204b854/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
@@ -92,12 +84,7 @@ const Footer = () => {
             <FaEnvelope />
           </ContactLink>
         </ContactLinks>
-        <MessageForm>
-          <Input type="text" placeholder="Your Name" required />
-          <Input type="email" placeholder="Your Email" required />
-          <Textarea rows="4" placeholder="Your Message" required></Textarea>
-          <SubmitButton type="submit">Send Message</SubmitButton>
-        </MessageForm>
+            </section>
       </FooterContent>
       <p>© 2024 Walter Liendo. All rights reserved.</p>
     </FooterWrapper>

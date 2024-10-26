@@ -55,10 +55,16 @@ const Presentation = () => {
       <Subtitle>Fullstack Developer</Subtitle>
       <div>
       <Button to="certifications" smooth={true} duration={500}>
-        Go to Certificates
+        Certificates
       </Button>
       <Button to="skills" smooth={true} duration={500}>
-        Go to Skills
+        Skills
+      </Button>
+      <Button to="contact" smooth={true} duration={500}>
+        Contact
+      </Button>
+      <Button to="projects" smooth={true} duration={500}>
+        Projects
       </Button>
       </div>
     </PresentationWrapper>

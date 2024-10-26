@@ -19,7 +19,7 @@ export const cert = [
     },
     { 
         id: "4",
-        name: 'Full stack Javascript', 
+        name: 'Full stack JavaScript', 
         url: '/img/fullstackJavascript.jpg', 
         preview: '/img/fullstackJavascript.jpg' 
     },
@@ -28,5 +28,45 @@ export const cert = [
         name: 'Oracle Cloud Infrastucture', 
         url: '/img/oci.png', 
         preview: '/img/oci.png' 
+    },
+    { 
+        id: "6",
+        name: 'React', 
+        url: '/img/react.png', 
+        preview: '/img/react.png' 
+    },
+    { 
+        id: "7",
+        name: 'Git and Github', 
+        url: '/img/github.png', 
+        preview: '/img/github.png' 
+    },
+    { 
+        id: "8",
+        name: 'DOM', 
+        url: '/img/dom.png', 
+        preview: '/img/dom.png' 
     }
 ]
+
+export const projects = [
+    {
+      name: "Mainero",
+      description: "Agricultural machinery.",
+      url: "https://www.mainero.uy",
+      preview: "/img/mainero.png",
+    },
+    {
+      name: "El Club del Trueque",
+      description: "A service for the community, exchange of merchandise and services.",
+      url: "https://www.elclubdeltrueque.com/",
+      preview: "/img/trueque.png",
+    },
+    {
+      name: "Paula Vainstein",
+      description: "Professional Website for Psychologist.",
+      url: "https://www.paulavainstein.com/",
+      preview: "/img/licenciada.png",
+    },
+    
+  ];
