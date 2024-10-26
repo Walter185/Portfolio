@@ -5,6 +5,7 @@ import { Link as ScrollLink } from 'react-scroll';
 
 const PresentationWrapper = styled.section`
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -33,6 +34,7 @@ const Button = styled(ScrollLink)`
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
+  margin-right: 20px;
   font-size: 1rem;
   color: white;
   background-color: #007bff;
@@ -51,9 +53,14 @@ const Presentation = () => {
     <PresentationWrapper id="presentation">
       <Title>Walter Liendo</Title>
       <Subtitle>Fullstack Developer</Subtitle>
+      <div>
       <Button to="certifications" smooth={true} duration={500}>
-        Go to Certifications
+        Go to Certificates
       </Button>
+      <Button to="skills" smooth={true} duration={500}>
+        Go to Skills
+      </Button>
+      </div>
     </PresentationWrapper>
   );
 };

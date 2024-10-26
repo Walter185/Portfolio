@@ -7,9 +7,13 @@ const CertificationsWrapper = styled.section`
   padding: 20px;
   width: 100%;
   text-align: center;
-  background-color: grey;
+  background-color: orange;
 `;
-
+const CertificateTitle = styled.h2`
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+`;
 const CertificationItem = styled.div`
   display: inline-block;
   margin: 10px;
@@ -37,15 +41,16 @@ const CertificationItem = styled.div`
 
   @media (max-width: 768px) { /* Móviles en orientación vertical */
     img {
-      width: 10em;
-      height: 100px;
+      width: 20em;
+      height: auto;
     }
   }
 
   @media (max-width: 480px) { /* Móviles pequeños */
     img {
-      width: 5em;
-      height: 80px;
+      width: 90%;
+      margin-right: 30px;
+      height: auto;
     }
   }
 `;
@@ -80,7 +85,7 @@ const Certifications = () => {
 
   return (
     <CertificationsWrapper id="certifications">
-      <h2>Certifications</h2>
+      <CertificateTitle>Certificates</CertificateTitle>
       <div>
         {cert && Array.isArray(cert) && cert.map((cert, index) => (
           <CertificationItem key={index} onClick={() => openModal(cert)}>
