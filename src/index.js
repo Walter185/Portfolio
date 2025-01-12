@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { PortfolioProvider } from './components/Context.js';
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
@@ -31,9 +32,11 @@ const Whatsapp=styled.a`
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <PortfolioProvider>
     <App />
     <Whatsapp href="https://api.whatsapp.com/send?phone=5491158465481" className="btn-wsp" target="_blank">
-          <i class="fa fa-whatsapp" aria-hidden="true"></i>
+          <i className="fa fa-whatsapp" aria-hidden="true"></i>
     </Whatsapp>
+    </PortfolioProvider>
   </React.StrictMode>
 );

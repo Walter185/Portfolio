@@ -1,18 +1,24 @@
-import Certifications from './components/Certifications';
+import { ToastContainer } from 'react-toastify';
 import Footer from './components/Footer';
-import Presentation from './components/Presentation';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import { Loginpage } from './components/Login/Loginpage';
+import NotFound from './pages/ErrorPage';
 
-function App() {
+function App(props) {
   return (
-    <div>
-      <Presentation />
-      <Skills />
-      <Certifications />
-      <Projects />
+    <>
+      <ToastContainer autoClose={2000} hideProgressBar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Loginpage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
-    </div>
+
+    </>
   );
 }
 
